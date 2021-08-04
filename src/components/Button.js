@@ -1,7 +1,22 @@
-function Button(){
-    return(
-        <button>Default</button>
-    )
-}
+import ButtonStyles from "../styles/button.module.scss";
 
-export default Button
+function Button(props) {
+  const { variant, color } = props;
+
+  return (
+    <button
+      className={`${ButtonStyles.button} ${
+        ButtonStyles[`${variant}_${color}`]
+      }`}
+    >
+      {props.children || "Default"}
+    </button>
+  );
+}
+Button.propTypes = {};
+Button.defaultProps = {
+  variant: "default",
+  color: "default",
+};
+
+export default Button;

@@ -1,0 +1,65 @@
+//default button
+//no props
+@import "colors";
+.button {
+  background: none;
+  border-radius: 6px;
+  border: none;
+  padding: 0.5em 0.75em;
+}
+.button:hover {
+  cursor: pointer;
+}
+.withShadow {
+  box-shadow: 0px 2px 3px 0px #33333333;
+}
+
+@mixin buttonStyle($color, $bg, $border: false) {
+  color: $color;
+  background: $bg;
+  @if $border {
+    border: solid 1px $color;
+  }
+}
+
+//contained buttons
+.default_default {
+  @include buttonStyle($textColor_main, $default);
+}
+.default_primary {
+  @include buttonStyle($textColor_button_solid, $primary);
+}
+.default_secondary {
+  @include buttonStyle($textColor_button_solid, $secondary);
+}
+.default_danger {
+  @include buttonStyle($textColor_button_solid, $danger);
+}
+
+//outline
+.outlined_default {
+  @include buttonStyle($textColor_main, none, true);
+}
+.outlined_primary {
+  @include buttonStyle($primary, none, true);
+}
+.outlined_secondary {
+  @include buttonStyle($secondary, none, true);
+}
+.outlined_danger {
+  @include buttonStyle($danger, none, true);
+}
+
+//just text
+.text_default {
+  @include buttonStyle($default, none);
+}
+.text_primary {
+  @include buttonStyle($primary, none);
+}
+.text_secondary {
+  @include buttonStyle($secondary, none);
+}
+.text_danger {
+  @include buttonStyle($danger, none);
+}

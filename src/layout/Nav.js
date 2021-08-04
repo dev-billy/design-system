@@ -7,7 +7,7 @@ function Nav(props) {
   return (
     <nav>
       <h2 className={LayoutStyles.logo}>DevBilly</h2>
-      <ul class={LayoutStyles.items}>
+      <ul className={LayoutStyles.items}>
         {NavList.map((item, index) => (
           <li
             onClick={item.onClick}
