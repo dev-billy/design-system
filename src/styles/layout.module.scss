@@ -1,0 +1,37 @@
+@import "colors";
+.main {
+  display: flex;
+  min-height: 100vh;
+}
+.nav {
+  width: 10vw;
+  display: flex;
+  background-color: $navBg;
+  padding: 1.2em;
+  flex-direction: column;
+}
+.content {
+  padding: 1em;
+}
+
+.items {
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  .item {
+    list-style-type: none;
+    margin-top: 2.5em;
+  }
+  .item:hover {
+    cursor: pointer;
+  }
+  .item_active {
+    color: $textColor_active;
+    font-weight: bold;
+  }
+  .item_inactive {
+    color: $textColor_inactive;
+  }
+}

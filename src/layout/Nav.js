@@ -1,17 +1,23 @@
 import navList from "./navlist";
-
-// const navStyles = {
-
-// }
+import LayoutStyles from "../styles/layout.module.scss";
 
 function Nav(props) {
   const { history, location } = props;
   const NavList = navList(location, history);
   return (
     <nav>
-      <ul>
+      <h2 className={LayoutStyles.logo}>DevBilly</h2>
+      <ul class={LayoutStyles.items}>
         {NavList.map((item, index) => (
-          <li onClick={item.onClick} key={index}>
+          <li
+            onClick={item.onClick}
+            key={index}
+            className={
+              item.active
+                ? `${LayoutStyles.item} ${LayoutStyles["item_active"]}`
+                : `${LayoutStyles.item} ${LayoutStyles["item_inactive"]}`
+            }
+          >
             {item.text}
           </li>
         ))}

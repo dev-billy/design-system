@@ -1,6 +1,6 @@
 import routes from "./routes";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import "./styles/App.scss";
 function App() {
   return (
     <Router>
