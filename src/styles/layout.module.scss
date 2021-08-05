@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 .nav {
-  width: 25vw;
+  width: 28vw;
   display: flex;
   background-color: $navBg;
   padding: 1.2em;
@@ -13,7 +13,13 @@
 .content {
   padding: 1em;
 }
-
+.logo {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+}
+.logo-span {
+  color: $brandLogoColor;
+}
 .items {
   top: 50%;
   display: flex;
@@ -37,10 +43,13 @@
 }
 @media screen and (min-width: 768px) {
   .nav {
-    width: 15vw;
-    max-width: 120px;
+    width: 18vw;
+    max-width: 150px;
   }
   .content {
-    padding: 2em;
+    padding: 1em 2em;
+  }
+  .logo {
+    font-size: 1.2rem;
   }
 }

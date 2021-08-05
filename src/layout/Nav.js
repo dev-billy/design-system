@@ -6,7 +6,10 @@ function Nav(props) {
   const NavList = navList(location, history);
   return (
     <nav>
-      <h2 className={LayoutStyles.logo}>DevBilly</h2>
+      <h2 className={LayoutStyles.logo}>
+        {"{"}
+        <span className={LayoutStyles["logo-span"]}>Dev</span>Billy{"}"}
+      </h2>
       <ul className={LayoutStyles.items}>
         {NavList.map((item, index) => (
           <li
