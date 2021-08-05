@@ -1,0 +1,26 @@
+.all {
+  width: 70vw;
+}
+.buttonGroup {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.displayBtn {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  code {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buttonGroup {
+    flex-direction: row;
+  }
+}
