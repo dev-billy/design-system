@@ -1,11 +1,11 @@
 import ButtonStyles from "../styles/button.module.scss";
 import Icon from "./Icon";
 function Button(props) {
-  const { variant, color, disableShadow, disabled } = props;
+  const { variant, color, disableShadow, disabled, size } = props;
   if (disabled) {
     return (
       <button
-        className={`${ButtonStyles.button} ${
+        className={`${ButtonStyles.button} ${ButtonStyles[`button_${size}`]}  ${
           ButtonStyles[`${variant}_disabled`]
         }`}
       >
@@ -16,7 +16,7 @@ function Button(props) {
   if (disableShadow) {
     return (
       <button
-        className={`${ButtonStyles.button} ${
+        className={`${ButtonStyles.button} ${ButtonStyles[`button_${size}`]} ${
           ButtonStyles[`${variant}_${color}`]
         }`}
       >
@@ -26,7 +26,7 @@ function Button(props) {
   }
   return (
     <button
-      className={`${ButtonStyles.button} ${
+      className={`${ButtonStyles.button} ${ButtonStyles[`button_${size}`]} ${
         ButtonStyles[`${variant}_${color}`]
       } ${ButtonStyles.withShadow}`}
     >
@@ -44,6 +44,7 @@ Button.propTypes = {};
 Button.defaultProps = {
   variant: "default",
   color: "default",
+  size: "md",
 };
 
 export default Button;

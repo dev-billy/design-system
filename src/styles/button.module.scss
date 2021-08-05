@@ -5,10 +5,18 @@
   background: none;
   border-radius: 6px;
   border: none;
-  padding: 0.5em 0.75em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.button_sm {
+  padding: 0.6em 1.1em;
+}
+.button_md {
+  padding: 0.8em 1.3em;
+}
+.button_lg {
+  padding: 1em 1.5em;
 }
 .button:hover {
   cursor: pointer;
