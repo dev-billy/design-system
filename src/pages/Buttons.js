@@ -1,11 +1,20 @@
 import Layout from "../layout";
 import Button from "../components/Button";
 import styles from "../styles/buttonspage.module.scss";
+import Designer from "../components/Designer";
+import { BrushRounded as Brush } from "@material-ui/icons";
 function ButtonDisplayPage() {
   return (
     <Layout>
       <h1>Buttons</h1>
       <div className={styles.all}>
+        <h3 style={{ marginBottom: 0, display: "flex", alignItems: "center" }}>
+          <Brush />
+          Designer
+        </h3>
+        <small>Sample preview of your button</small>
+        <Designer />
+        <h3>All Buttons</h3>
         <div className={styles.buttonGroup}>
           <div className={styles.displayBtn}>
             <code>{"<Button />"} </code>

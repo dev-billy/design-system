@@ -1,0 +1,75 @@
+@import "colors";
+
+.designer {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  h4 {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+.properties {
+  width: 40%;
+}
+.separator {
+  width: 2px;
+  background-color: $secondary;
+}
+.result {
+  width: 50%;
+}
+.grouped {
+  display: flex;
+  justify-content: space-between;
+  label {
+    width: 50%;
+  }
+}
+.checkbox {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  h5 {
+    margin: 0;
+    font-weight: 100;
+  }
+  input,
+  select {
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  input[type="text"],
+  select {
+    font-weight: 100;
+    align-self: stretch;
+    padding: 0.5em 0.15em;
+  }
+}
+
+.resultItems {
+  display: flex;
+  height: 80%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.codeArea {
+  display: flex;
+  flex-direction: column;
+  textarea {
+    margin-top: 5px;
+    align-self: flex-start;
+    resize: none;
+    font-family: "Fira Code", monospace;
+  }
+}
