@@ -9,7 +9,7 @@ function Button(props) {
           ButtonStyles[`${variant}_disabled`]
         }`}
       >
-        {props.children || "Default"}
+        {props.children || "Disabled"}
       </button>
     );
   }

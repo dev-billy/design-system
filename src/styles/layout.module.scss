@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 .nav {
-  width: 10vw;
+  width: 25vw;
   display: flex;
   background-color: $navBg;
   padding: 1.2em;
@@ -33,5 +33,11 @@
   }
   .item_inactive {
     color: $textColor_inactive;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    width: 15vw;
+    max-width: 120px;
   }
 }
