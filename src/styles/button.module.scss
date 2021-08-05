@@ -6,6 +6,9 @@
   border-radius: 6px;
   border: none;
   padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .button:hover {
   cursor: pointer;

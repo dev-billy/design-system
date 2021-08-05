@@ -1,5 +1,5 @@
 import ButtonStyles from "../styles/button.module.scss";
-
+import Icon from "./Icon";
 function Button(props) {
   const { variant, color, disableShadow, disabled } = props;
   if (disabled) {
@@ -30,7 +30,13 @@ function Button(props) {
         ButtonStyles[`${variant}_${color}`]
       } ${ButtonStyles.withShadow}`}
     >
+      {props.startIcon && (
+        <Icon name={props.startIcon} style={{ marginRight: "5px" }} />
+      )}
       {props.children || "Default"}
+      {props.endIcon && (
+        <Icon name={props.endIcon} style={{ marginLeft: "5px" }} />
+      )}
     </button>
   );
 }
