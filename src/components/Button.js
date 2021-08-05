@@ -9,7 +9,13 @@ function Button(props) {
           ButtonStyles[`${variant}_disabled`]
         }`}
       >
-        {props.children || "Disabled"}
+        {props.startIcon && (
+          <Icon name={props.startIcon} style={{ marginRight: "5px" }} />
+        )}
+        {props.children || "Default"}
+        {props.endIcon && (
+          <Icon name={props.endIcon} style={{ marginLeft: "5px" }} />
+        )}
       </button>
     );
   }
@@ -20,7 +26,13 @@ function Button(props) {
           ButtonStyles[`${variant}_${color}`]
         }`}
       >
+        {props.startIcon && (
+          <Icon name={props.startIcon} style={{ marginRight: "5px" }} />
+        )}
         {props.children || "Default"}
+        {props.endIcon && (
+          <Icon name={props.endIcon} style={{ marginLeft: "5px" }} />
+        )}
       </button>
     );
   }

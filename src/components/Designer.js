@@ -1,6 +1,32 @@
+import { useState } from "react";
 import Button from "./Button";
 import DesignerStyles from "../styles/buttonDesigner.module.scss";
 function Designer() {
+  const [properties, setProperties] = useState({
+    icon: false,
+    shadow: true,
+    select_icon: "local_grocery_store",
+    position: "start",
+    color: "default",
+    variant: "default",
+    text: "Default",
+  });
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      setProperties({ ...properties, [name]: checked });
+    } else {
+      setProperties({ ...properties, [name]: value });
+    }
+  };
+  let fieldProps = {
+    disableShadow: !properties.shadow,
+    color: properties.color,
+    variant: properties.variant,
+  };
+  if (properties.icon) {
+    fieldProps[`${properties.position}Icon`] = properties.select_icon;
+  }
   return (
     <div className={DesignerStyles.designer}>
       <div className={DesignerStyles.properties}>
@@ -9,56 +35,91 @@ function Designer() {
           <div className={DesignerStyles.grouped}>
             <label
               className={`${DesignerStyles.label} ${DesignerStyles.checkbox}`}
-              htmlFor="icon"
             >
-              <input type="checkbox" name="icon" />
+              <input
+                onChange={handleChange}
+                checked={properties.icon}
+                type="checkbox"
+                name="icon"
+              />
               <h5>Icon</h5>
             </label>
             <label
               className={`${DesignerStyles.label} ${DesignerStyles.checkbox}`}
-              htmlFor="shadow"
             >
-              <input type="checkbox" name="shadow" />
+              <input
+                onChange={handleChange}
+                checked={properties.shadow}
+                type="checkbox"
+                name="shadow"
+              />
               <h5>Shadow</h5>
             </label>
           </div>
+          {properties.icon ? (
+            <div className={DesignerStyles.grouped}>
+              <label className={DesignerStyles.label}>
+                <h5>Select an Icon</h5>
+                <select
+                  name="select_icon"
+                  onChange={handleChange}
+                  value={properties.select_icon}
+                >
+                  <option value="local_grocery_store">
+                    local_grocery_store
+                  </option>
+                </select>
+              </label>
+              <label className={DesignerStyles.label}>
+                <h5>Position</h5>
+                <select
+                  name="position"
+                  onChange={handleChange}
+                  value={properties.position}
+                >
+                  <option>start</option>
+                  <option>end</option>
+                </select>
+              </label>
+            </div>
+          ) : (
+            ""
+          )}
           <div className={DesignerStyles.grouped}>
-            <label className={DesignerStyles.label} htmlFor="icon-select">
-              <h5>Select an Icon</h5>
-              <select name="icon-select">
-                <option>local_grocery_store</option>
-              </select>
-            </label>
-            <label className={DesignerStyles.label} htmlFor="icon-position">
-              <h5>Position</h5>
-              <select name="icon-select">
-                <option>start</option>
-                <option>end</option>
-              </select>
-            </label>
-          </div>
-          <div className={DesignerStyles.grouped}>
-            <label className={DesignerStyles.label} htmlFor="color">
+            <label className={DesignerStyles.label}>
               <h5>Color:</h5>
-              <select name="color">
-                <option>default</option>
-                <option>primary</option>
-                <option>secondary</option>
-                <option>danger</option>
+              <select
+                name="color"
+                value={properties.color}
+                onChange={handleChange}
+              >
+                <option value="default">default</option>
+                <option value="primary">primary</option>
+                <option value="secondary">secondary</option>
+                <option value="danger">danger</option>
               </select>
             </label>
-            <label className={DesignerStyles.label} htmlFor="variant">
+            <label className={DesignerStyles.label}>
               <h5>Variant:</h5>
-              <select name="variant">
-                <option>default</option>
-                <option>outlined</option>
-                <option>text</option>
+              <select
+                name="variant"
+                value={properties.variant}
+                onChange={handleChange}
+              >
+                <option value="default">default</option>
+                <option value="outlined">outlined</option>
+                <option value="text">text</option>
               </select>
             </label>
           </div>
-          <label className={DesignerStyles.label} htmlFor="text">
+          <label className={DesignerStyles.label}>
             <h5>Text</h5>
-            <input type="text" name="btn_text" />
+            <input
+              onChange={handleChange}
+              type="text"
+              value={properties.text}
+              name="text"
+            />
           </label>
         </form>
       </div>
@@ -67,11 +128,19 @@ function Designer() {
         <h4>Result</h4>
         <div className={DesignerStyles.resultItems}>
           <div className={DesignerStyles.resultBtn}>
-            <Button />
+            <Button {...fieldProps}>{properties.text}</Button>
           </div>
           <div className={DesignerStyles.codeArea}>
             <small>Code</small>
-            <textarea rows="5" disabled></textarea>
+            <code>{`<Button variant="${properties.variant}" color="${
+              properties.color
+            }" ${
+              properties.icon
+                ? `${properties["position"]}Icon="${properties.select_icon}"`
+                : ""
+            } disableShadow={${!properties.shadow}} >${
+              properties.text
+            }</Button>`}</code>
           </div>
         </div>
       </div>
