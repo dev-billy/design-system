@@ -4,9 +4,9 @@ function ButtonDisplayPage() {
   return (
     <Layout>
       <h1>Different Variations of Buttons here</h1>
-      <Button />
+      <Button color="primary" />
       <Button variant="text" color="danger" />
-      <Button variant="outlined" color="default" />
+      <Button variant="outlined" color="primary" disableShadow disabled />
     </Layout>
   );
 }

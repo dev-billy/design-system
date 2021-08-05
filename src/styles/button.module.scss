@@ -99,3 +99,24 @@
 .text_danger:hover {
   background-color: $danger_hover_noBg;
 }
+
+//disabledButtons
+
+.text_disabled {
+  @include buttonStyle($textColor_inactive, none);
+}
+.text_disabled:hover {
+  cursor: not-allowed;
+}
+.outlined_disabled {
+  @include buttonStyle($textColor_inactive, none, true);
+}
+.outlined_disabled:hover {
+  cursor: not-allowed;
+}
+.default_disabled {
+  @include buttonStyle($textColor_inactive, $default);
+}
+.default_disabled:hover {
+  cursor: not-allowed;
+}
