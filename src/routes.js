@@ -3,6 +3,7 @@ import ColorsDisplayPage from "./pages/Colors";
 import TypographyDisplayPage from "./pages/Typography";
 import GridDisplayPage from "./pages/Grid";
 import InputsDisplayPage from "./pages/Inputs";
+import NotFound from "./pages/404";
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
     path: "/grid",
     exact: true,
     component: GridDisplayPage,
+  },
+  {
+    path: "*",
+    exact: false,
+    component: NotFound,
   },
 ];
 
