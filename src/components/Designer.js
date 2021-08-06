@@ -29,6 +29,7 @@ function Designer() {
   }
   return (
     <div className={DesignerStyles.designer}>
+      <div className={DesignerStyles.separator}></div>
       <div className={DesignerStyles.properties}>
         <h4>Properties</h4>
         <form>
@@ -144,6 +145,7 @@ function Designer() {
           </div>
         </div>
       </div>
+      <div className={DesignerStyles.separator}></div>
     </div>
   );
 }

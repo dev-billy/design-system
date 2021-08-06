@@ -51,7 +51,9 @@
   }
   input[type="text"],
   select {
+    border-radius: 6px;
     font-weight: 100;
+    border: solid 1px;
     align-self: stretch;
     padding: 0.5em 0.15em;
   }
@@ -66,10 +68,11 @@
 .codeArea {
   display: flex;
   flex-direction: column;
-  textarea {
-    margin-top: 5px;
-    align-self: flex-start;
-    resize: none;
-    font-family: "Fira Code", monospace;
+  code {
+    border: solid 1px $secondary;
+    padding: 1em;
+    width: 80%;
+    border-radius: 6px;
+    font-size: 13px;
   }
 }
