@@ -69,6 +69,11 @@ function Designer() {
                   <option value="local_grocery_store">
                     local_grocery_store
                   </option>
+                  <option value="arrow_forward">arrow_forward</option>
+                  <option value="arrow_back">arrow_back</option>
+                  <option value="add">add</option>
+                  <option value="designer_brush">designer_brush</option>
+                  <option value="bookmark">bookmark</option>
                 </select>
               </label>
               <label className={DesignerStyles.label}>
