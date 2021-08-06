@@ -1,5 +1,8 @@
 .all {
-  width: 70vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .buttonGroup {
   display: flex;
@@ -16,6 +19,7 @@
   margin-bottom: 10px;
   code {
     margin-bottom: 5px;
+    width: 100%;
     font-size: 0.65em;
   }
 }

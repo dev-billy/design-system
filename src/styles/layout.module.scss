@@ -2,16 +2,18 @@
 .main {
   display: flex;
   min-height: 100vh;
+  width: 100vw;
 }
 .nav {
-  width: 28vw;
+  width: 28%;
   display: flex;
   background-color: $navBg;
-  padding: 1.2em;
+  padding: 1.2em 0.5em;
   flex-direction: column;
 }
 .content {
-  padding: 1em;
+  padding: 1em 0.5em;
+  width: 72%;
 }
 .logo {
   font-family: "Fira Code", monospace;
@@ -21,12 +23,14 @@
   color: $brandLogoColor;
 }
 .items {
-  top: 50%;
+  //top: 50%;
+  position: fixed;
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
   .item {
+    font-size: 12px;
     list-style-type: none;
     margin-top: 2.5em;
   }
@@ -44,6 +48,7 @@
 @media screen and (min-width: 768px) {
   .nav {
     width: 18vw;
+    padding: 1.2em;
     max-width: 150px;
   }
   .content {
@@ -51,5 +56,10 @@
   }
   .logo {
     font-size: 1.2rem;
+  }
+  .items {
+    .item {
+      font-size: initial;
+    }
   }
 }

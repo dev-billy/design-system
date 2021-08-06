@@ -12,7 +12,9 @@ function ButtonDisplayPage() {
           <Brush />
           Designer
         </h3>
-        <small>Sample preview of your button</small>
+        <small style={{ fontSize: "12px" }}>
+          Sample preview of your button
+        </small>
         <Designer />
         <h3>All Buttons</h3>
         <div className={styles.buttonGroup}>
@@ -63,11 +65,11 @@ function ButtonDisplayPage() {
         </div>
         <div className={styles.buttonGroup}>
           <div className={styles.displayBtn}>
-            <code>{"<Button startIcon='local_grocery_store' />"} </code>
+            <code>{"<Button startIcon='local_grocery' />"} </code>
             <Button color="primary" startIcon="local_grocery_store" />
           </div>
           <div className={styles.displayBtn}>
-            <code>{"<Button endIcon='local_grocery_store' />"} </code>
+            <code>{"<Button endIcon='local_grocery' />"} </code>
             <Button color="primary" endIcon="local_grocery_store" />
           </div>
           <div className={styles.displayBtn}>
