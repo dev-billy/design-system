@@ -1,29 +1,28 @@
-/* eslint-disable eqeqeq */
 const navList = (location, history) => {
   return [
     {
       text: "Colors",
-      active: "/colors" == location.pathname,
+      active: "/colors" === location.pathname,
       onClick: () => history.push("/colors"),
     },
     {
       text: "Typography",
-      active: "/typography" == location.pathname,
+      active: "/typography" === location.pathname,
       onClick: () => history.push("/typography"),
     },
     {
       text: "Buttons",
-      active: "/buttons" == location.pathname,
+      active: "/buttons" === location.pathname || "/" === location.pathname,
       onClick: () => history.push("/buttons"),
     },
     {
       text: "Inputs",
-      active: "/inputs" == location.pathname,
+      active: "/inputs" === location.pathname,
       onClick: () => history.push("/inputs"),
     },
     {
       text: "Grid",
-      active: "/grid" == location.pathname,
+      active: "/grid" === location.pathname,
       onClick: () => history.push("/grid"),
     },
   ];
