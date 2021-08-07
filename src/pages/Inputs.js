@@ -47,6 +47,12 @@ function Inputs() {
         </div>
         <div className={styles.inputGroup}>
           <div className={styles.displayBtn}>
+            <code>{"<Input value='Text' />"} </code>
+            <Input value="Text" />
+          </div>
+        </div>
+        <div className={styles.inputGroup}>
+          <div className={styles.displayBtn}>
             <code>{"<Input size='sm' />"} </code>
             <Input size="sm" />
           </div>
@@ -61,20 +67,8 @@ function Inputs() {
         </div>
         <div className={styles.inputGroup}>
           <div className={styles.displayBtn}>
-            <code>{"<Input   />"} </code>
-            <Input />
-          </div>
-          <div className={styles.displayBtn}>
-            <code>{"<Input   />"} </code>
-            <Input />
-          </div>
-          <div className={styles.displayBtn}>
-            <code>{"<Input   />"} </code>
-            <Input />
-          </div>
-          <div className={styles.displayBtn}>
-            <code>{"<Input   />"} </code>
-            <Input />
+            <code>{"<Input fullwidth  />"} </code>
+            <Input fullwidth />
           </div>
         </div>
       </div>

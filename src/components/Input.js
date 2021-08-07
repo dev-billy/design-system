@@ -1,20 +1,31 @@
 import InputStyles from "../styles/input.module.scss";
 import Icon from "./Icon";
 function Input(props) {
-  const { error, startIcon, endIcon, size, placeholder, disabled, helperText } =
-    props;
+  const {
+    error,
+    startIcon,
+    endIcon,
+    size,
+    placeholder,
+    value,
+    disabled,
+    fullwidth,
+    helperText,
+  } = props;
   return (
     <div className={`${InputStyles.input} ${error ? InputStyles.error : ""}`}>
       <div
         className={`${InputStyles.inputController} ${InputStyles[size]} ${
           startIcon ? InputStyles.iconStart : ""
         } ${endIcon ? InputStyles.iconEnd : ""}
+        ${fullwidth ? InputStyles.fullwidth : ""}
         `}
       >
         <input
           type="text"
           placeholder={placeholder || "Placeholder"}
           disabled={disabled}
+          value={value}
         />
         <label>Label</label>
         {startIcon && (
