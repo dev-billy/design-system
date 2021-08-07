@@ -1,0 +1,31 @@
+@import "colors";
+.input {
+  display: flex;
+  flex-direction: column;
+}
+.inputController {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  input {
+    padding: 1em;
+    border: solid 1px $borderColor;
+    border-radius: 8px;
+    min-width: 200px;
+  }
+  input:hover {
+    border-color: $border_hover;
+  }
+  input:focus {
+    outline: none;
+    border-color: $primary;
+  }
+  input:focus-visible + label {
+    color: $primary;
+  }
+  label {
+    margin-bottom: 5px;
+    font-size: 13px;
+    margin-left: 2px;
+  }
+}
