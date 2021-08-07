@@ -8,6 +8,7 @@ function Button(props) {
         className={`${ButtonStyles.button} ${ButtonStyles[`button_${size}`]}  ${
           ButtonStyles[`${variant}_disabled`]
         }`}
+        disabled
       >
         {props.startIcon && (
           <Icon name={props.startIcon} style={{ marginRight: "5px" }} />
