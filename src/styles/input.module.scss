@@ -43,17 +43,52 @@
     color: $primary;
   }
 }
-.iconStart {
+.sm.iconStart {
+  input {
+    padding: 1em 1em 1em 1.5em;
+  }
+}
+.md.iconStart {
   input {
     padding: 1em 1em 1em 2em;
   }
 }
-.iconEnd {
+.lg.iconStart {
+  input {
+    padding: 1em 1em 1em 2.5em;
+  }
+}
+.sm.iconEnd {
+  input {
+    padding: 1em 1.5em 1em 1em;
+  }
+}
+.md.iconEnd {
   input {
     padding: 1em 2em 1em 1em;
   }
 }
-
+.lg.iconEnd {
+  input {
+    padding: 1em 2.5em 1em 1em;
+  }
+}
+.sm {
+  input {
+    padding: 0.5em;
+    font-size: 0.85rem;
+  }
+}
+.md {
+  input {
+    padding: 1em;
+  }
+}
+.lg {
+  input {
+    font-size: 1.1rem;
+  }
+}
 .error {
   input {
     border-color: $danger;

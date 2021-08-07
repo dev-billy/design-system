@@ -1,14 +1,15 @@
 import InputStyles from "../styles/input.module.scss";
 import Icon from "./Icon";
 function Input(props) {
-  const { error, startIcon, endIcon, placeholder, disabled, helperText } =
+  const { error, startIcon, endIcon, size, placeholder, disabled, helperText } =
     props;
   return (
     <div className={`${InputStyles.input} ${error ? InputStyles.error : ""}`}>
       <div
-        className={`${InputStyles.inputController} ${
+        className={`${InputStyles.inputController} ${InputStyles[size]} ${
           startIcon ? InputStyles.iconStart : ""
-        } ${endIcon ? InputStyles.iconEnd : ""}`}
+        } ${endIcon ? InputStyles.iconEnd : ""}
+        `}
       >
         <input
           type="text"
@@ -44,5 +45,8 @@ function Input(props) {
     </div>
   );
 }
+Input.defaultProps = {
+  size: "md",
+};
 
 export default Input;
