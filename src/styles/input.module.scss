@@ -5,6 +5,8 @@
 }
 .inputController {
   display: flex;
+  position: relative;
+  width: fit-content;
   flex-direction: column-reverse;
   align-items: flex-start;
   input {
@@ -13,6 +15,14 @@
     border-radius: 8px;
     min-width: 200px;
   }
+  .icon {
+    color: $borderColor;
+  }
+  label {
+    margin-bottom: 5px;
+    font-size: 13px;
+    margin-left: 2px;
+  }
   input:hover {
     border-color: $border_hover;
   }
@@ -20,12 +30,44 @@
     outline: none;
     border-color: $primary;
   }
-  input:focus-visible + label {
+  input:focus + label {
     color: $primary;
   }
+  input:focus + .icon {
+    color: $primary;
+  }
+}
+.iconStart {
+  input {
+    padding: 1em 1em 1em 2em;
+  }
+}
+.iconEnd {
+  input {
+    padding: 1em 2em 1em 1em;
+  }
+}
+
+.error {
+  input {
+    border-color: $danger;
+  }
   label {
-    margin-bottom: 5px;
-    font-size: 13px;
-    margin-left: 2px;
+    color: $danger;
+  }
+  input:hover {
+    border-color: $danger_hover;
+  }
+  input:focus {
+    border-color: $danger;
+  }
+  input:focus + label {
+    color: $danger;
+  }
+  input:focus + .icon {
+    color: $danger;
+  }
+  small {
+    color: $danger;
   }
 }
