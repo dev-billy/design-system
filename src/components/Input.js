@@ -1,20 +1,24 @@
 import InputStyles from "../styles/input.module.scss";
 import Icon from "./Icon";
 function Input(props) {
+  const { error, startIcon, endIcon, placeholder, disabled, helperText } =
+    props;
   return (
-    <div
-      className={`${InputStyles.input} ${props.error ? InputStyles.error : ""}`}
-    >
+    <div className={`${InputStyles.input} ${error ? InputStyles.error : ""}`}>
       <div
         className={`${InputStyles.inputController} ${
-          props.startIcon ? InputStyles.iconStart : ""
-        } ${props.endIcon ? InputStyles.iconEnd : ""}`}
+          startIcon ? InputStyles.iconStart : ""
+        } ${endIcon ? InputStyles.iconEnd : ""}`}
       >
-        <input type="text" placeholder={props.placeholder || "Placeholder"} />
+        <input
+          type="text"
+          placeholder={placeholder || "Placeholder"}
+          disabled={disabled}
+        />
         <label>Label</label>
-        {props.startIcon && (
+        {startIcon && (
           <Icon
-            name={props.startIcon}
+            name={startIcon}
             className={InputStyles.icon}
             style={{
               position: "absolute",
@@ -23,9 +27,9 @@ function Input(props) {
             }}
           />
         )}
-        {props.endIcon && (
+        {endIcon && (
           <Icon
-            name={props.endIcon}
+            name={endIcon}
             className={InputStyles.icon}
             style={{
               position: "absolute",
@@ -36,7 +40,7 @@ function Input(props) {
           />
         )}
       </div>
-      {props.helperText && <small>{props.helperText}</small>}
+      {helperText && <small>{helperText}</small>}
     </div>
   );
 }

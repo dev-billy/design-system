@@ -2,6 +2,12 @@
 .input {
   display: flex;
   flex-direction: column;
+  margin: 10px;
+  small {
+    font-size: 12px;
+    color: $textColor_inactive;
+    margin-left: 3px;
+  }
 }
 .inputController {
   display: flex;
