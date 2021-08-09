@@ -57,7 +57,7 @@ This Journey is helping me learn better, and hone my react skills and design ski
 
 - [x] Buttons
 - [ ] Colors
-- [ ] Inputs
+- [x] Inputs
 - [ ] Typography
 - [ ] Grid
 
