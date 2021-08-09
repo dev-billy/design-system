@@ -27,8 +27,9 @@ function Input(props) {
             placeholder={placeholder || "Placeholder"}
             disabled={disabled}
             rows={row}
-            value={value}
-          />
+          >
+            {value}
+          </textarea>
           <label>Label</label>
         </div>
         {helperText && <small>{helperText}</small>}
@@ -49,7 +50,7 @@ function Input(props) {
           type="text"
           placeholder={placeholder || "Placeholder"}
           disabled={disabled}
-          value={value}
+          defaultValue={value}
         />
         <label>Label</label>
         {startIcon && (
