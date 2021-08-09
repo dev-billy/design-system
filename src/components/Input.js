@@ -11,7 +11,31 @@ function Input(props) {
     disabled,
     fullwidth,
     helperText,
+    multiline,
+    row,
   } = props;
+  if (multiline) {
+    return (
+      <div className={`${InputStyles.input} ${error ? InputStyles.error : ""}`}>
+        <div
+          className={`${InputStyles.inputController}  
+          ${fullwidth ? InputStyles.fullwidth : ""}
+          `}
+        >
+          <textarea
+            type="text"
+            placeholder={placeholder || "Placeholder"}
+            disabled={disabled}
+            rows={row}
+            value={value}
+          />
+          <label>Label</label>
+        </div>
+        {helperText && <small>{helperText}</small>}
+      </div>
+    );
+  }
+
   return (
     <div className={`${InputStyles.input} ${error ? InputStyles.error : ""}`}>
       <div

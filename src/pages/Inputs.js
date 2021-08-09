@@ -71,6 +71,12 @@ function Inputs() {
             <Input fullwidth />
           </div>
         </div>
+        <div className={styles.inputGroup}>
+          <div className={styles.displayInput}>
+            <code>{"<Input multiline row='4'  />"} </code>
+            <Input multiline row="4" />
+          </div>
+        </div>
       </div>
     </Layout>
   );
